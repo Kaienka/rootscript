@@ -5,14 +5,5 @@ import TheWelcome from '../components/TheWelcome.vue'
 <template>
   <main>
     <TheWelcome />
-    <button
-      @click="
-        () => {
-          throw new Error('Sentry test')
-        }
-      "
-    >
-      Test Sentry
-    </button>
   </main>
 </template>
