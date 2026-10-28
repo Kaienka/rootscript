@@ -1,8 +1,10 @@
-# Kurrent Trainer
+# Rootscript
 
-![CI](https://github.com/Kaienka/Kurrenta/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Kaienka/rootscript/actions/workflows/ci.yml/badge.svg)
 
-An interactive web app that teaches you to read **Kurrent**, the old German handwriting used in Prussian civil and church records, from single letters all the way to a complete birth, marriage or death record.
+**Learn to read your ancestors' handwriting.**
+
+Rootscript is an interactive web app that teaches you to read **Kurrent**, the old German handwriting used in Prussian civil and church records, from single letters all the way to a complete birth, marriage or death record.
 
 > **Status:** early development. Nothing to try yet; follow the repo to see it grow.
 
@@ -31,8 +33,8 @@ Your progress is saved in your browser and a spaced-repetition system brings bac
 > The app scaffold is coming in the next step. These commands will work once it lands.
 
 ```bash
-git clone https://github.com/Kaienka/Kurrenta.git
-cd Kurrenta
+git clone https://github.com/Kaienka/rootscript.git
+cd rootscript
 npm install
 npm run dev
 ```
