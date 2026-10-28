@@ -2,31 +2,32 @@ import { globalIgnores } from 'eslint/config'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import pluginVue from 'eslint-plugin-vue'
 import pluginVitest from '@vitest/eslint-plugin'
-import pluginOxlint from 'eslint-plugin-oxlint'
 import skipFormatting from 'eslint-config-prettier/flat'
-
-// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
-// import { configureVueProject } from '@vue/eslint-config-typescript'
-// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
-// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
+import globals from 'globals'
 
 export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
-    files: ['**/*.{vue,ts,mts,tsx}'],
+    files: ['**/*.{js,mjs,ts,mts,vue}'],
   },
 
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  globalIgnores(['**/dist/**', '**/coverage/**', '**/playwright-report/**', '**/test-results/**']),
 
-  ...pluginVue.configs['flat/essential'],
+  pluginVue.configs['flat/recommended'],
   vueTsConfigs.recommended,
 
+  // testy jednostkowe Vitesta
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
 
-  ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
+  // pliki konfiguracyjne i testy e2e działają w Node
+  {
+    files: ['*.config.*', 'e2e/**'],
+    languageOptions: { globals: globals.node },
+  },
 
+  // na końcu: wyłącza reguły, które gryzą się z Prettierem
   skipFormatting,
 )
