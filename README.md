@@ -30,7 +30,7 @@ Your progress is saved in your browser and a spaced-repetition system brings bac
 
 ```bash
 git clone https://github.com/Kaienka/Kurrenta.git
-cd <repo-name>
+cd Kurrenta
 npm install
 npm run dev
 ```
