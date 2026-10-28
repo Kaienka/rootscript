@@ -1,1 +1,10 @@
 /// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_APP_ENV?: 'development' | 'preview' | 'production'
+  readonly VITE_SITE_URL?: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
