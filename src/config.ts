@@ -20,4 +20,5 @@ export const config = {
   appEnv,
   isProduction: appEnv === 'production',
   siteUrl: import.meta.env.VITE_SITE_URL ?? window.location.origin,
+  sentryDsn: import.meta.env.VITE_SENTRY_DSN,
 } as const
