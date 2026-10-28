@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test'
 
 /**
  * Read environment variables from file.
@@ -25,7 +25,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-      baseURL: 'http://localhost:5173',
+    baseURL: 'http://localhost:5173',
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
@@ -71,10 +71,10 @@ export default defineConfig({
     // },
   ],
 
-webServer: {
-  // na CI testujemy zbudowaną aplikację, lokalnie serwer deweloperski
-  command: process.env.CI ? 'npm run build && npm run preview -- --port 5173' : 'npm run dev',
-  port: 5173,
-  reuseExistingServer: !process.env.CI,
-},
-});
+  webServer: {
+    // na CI testujemy zbudowaną aplikację, lokalnie serwer deweloperski
+    command: process.env.CI ? 'npm run build && npm run preview -- --port 5173' : 'npm run dev',
+    port: 5173,
+    reuseExistingServer: !process.env.CI,
+  },
+})
