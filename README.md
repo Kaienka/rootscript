@@ -1,5 +1,7 @@
 # Kurrent Trainer
 
+![CI](https://github.com/Kaienka/Kurrenta/actions/workflows/ci.yml/badge.svg)
+
 An interactive web app that teaches you to read **Kurrent**, the old German handwriting used in Prussian civil and church records, from single letters all the way to a complete birth, marriage or death record.
 
 > **Status:** early development. Nothing to try yet; follow the repo to see it grow.
