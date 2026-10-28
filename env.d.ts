@@ -3,6 +3,7 @@
 interface ImportMetaEnv {
   readonly VITE_APP_ENV?: 'development' | 'preview' | 'production'
   readonly VITE_SITE_URL?: string
+  readonly VITE_SENTRY_DSN?: string
 }
 
 interface ImportMeta {
