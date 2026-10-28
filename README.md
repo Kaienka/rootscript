@@ -11,7 +11,7 @@ Millions of people have ancestors whose records were written in Kurrent, in Prus
 ## Planned learning path
 
 1. **Alphabet:** every letter with an animated stroke order, plus drills for the pairs that are easy to confuse (`e` / `n`, the arc over `u`, long `ſ` vs short `s`).
-2. **Words:** the ~150 words that matter most in vital records (*geboren*, *getauft*, *Hebamme*, months, numbers), with typing exercises and graded hints.
+2. **Words:** the ~150 words that matter most in vital records (_geboren_, _getauft_, _Hebamme_, months, numbers), with typing exercises and graded hints.
 3. **Real handwriting:** zoomable fragments of archival scans with hints pinned to the tricky spots.
 4. **Whole records:** read a full civil registry record and fill in a form (date, child, parents, witnesses), then compare your reading with the reference transcription.
 
@@ -34,6 +34,22 @@ cd Kurrenta
 npm install
 npm run dev
 ```
+
+## Project structure
+
+| Folder               | What goes there                                                              |
+| -------------------- | ---------------------------------------------------------------------------- |
+| `src/modules/`       | Features of the app, one folder each: `alphabet`, `words`, `scans`, `record` |
+| `src/components/ui/` | Generic UI building blocks that know nothing about Kurrent                   |
+| `src/composables/`   | Reusable Vue logic (`useProgress`, `useExercise`)                            |
+| `src/lib/`           | Plain TypeScript functions with no Vue dependency, easy to unit test         |
+| `src/content/`       | Course data as JSON: letters, words, scan transcriptions                     |
+| `src/stores/`        | Pinia stores                                                                 |
+| `src/views/`         | General pages such as Home and About                                         |
+| `public/scans/`      | Processed scan images (added later)                                          |
+| `e2e/`               | Playwright end-to-end tests                                                  |
+
+Unit tests live in `__tests__` folders next to the code they test.
 
 ## Contributing
 
