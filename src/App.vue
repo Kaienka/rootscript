@@ -2,6 +2,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
 import EnvBadge from '@/components/EnvBadge.vue'
+import { config } from '@/config'
+import { Analytics } from '@vercel/analytics/vue'
 </script>
 
 <template>
@@ -20,6 +22,7 @@ import EnvBadge from '@/components/EnvBadge.vue'
   </header>
 
   <RouterView />
+  <Analytics v-if="config.isProduction" />
 </template>
 
 <style scoped>
